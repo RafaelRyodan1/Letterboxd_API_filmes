@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "titulo": "Interestelar",
+    "diretor": "Christopher Nolan",
+    "ano": 2014,
+    "nota": 9.5
+  },
+  {
+    "id": 2,
+    "titulo": "O Poderoso Chefão",
+    "diretor": "Francis Ford Coppola",
+    "ano": 1972,
+    "nota": 9.2
+  },
+  {
+    "id": 3,
+    "titulo": "Parasita",
+    "diretor": "Bong Joon-ho",
+    "ano": 2019,
+    "nota": 8.9
+  },
+  {
+    "id": 4,
+    "titulo": "Pulse",
+    "diretor": "Kyioshi Kurosawa",
+    "ano": 2001,
+    "nota": 7.4
+  },
+  {
+    "id": 5,
+    "titulo": "Pulse",
+    "diretor": "Kyioshi Kurosawa",
+    "ano": 2001,
+    "nota": 7.4
+  }
+]

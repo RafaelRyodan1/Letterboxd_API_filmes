@@ -1,0 +1,171 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API de Filmes - Letterboxd database Be Like.",
+    "description": "API REST para cadastro e consulta de filmes em geral.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Servidor local"
+    }
+  ],
+  "paths": {
+    "/filmes": {
+      "get": {
+        "summary": "Lista todos os filmes",
+        "tags": ["Filmes"],
+        "responses": {
+          "200": {
+            "description": "Lista retornada com sucesso",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 1,
+                    "titulo": "Interestelar",
+                    "diretor": "Christopher Nolan",
+                    "ano": 2014,
+                    "nota": 9.5
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Cadastra um novo filme",
+        "tags": ["Filmes"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {
+                "titulo": "Oppenheimer",
+                "diretor": "Christopher Nolan",
+                "ano": 2023,
+                "nota": 8.7
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Filme cadastrado com sucesso",
+            "content": {
+              "application/json": {
+                "example": {
+                  "id": 4,
+                  "titulo": "Oppenheimer",
+                  "diretor": "Christopher Nolan",
+                  "ano": 2023,
+                  "nota": 8.7
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Campos obrigatórios ausentes",
+            "content": {
+              "application/json": {
+                "example": { "mensagem": "Preencha todos os campos: titulo, diretor, ano, nota." }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/filmes/{id}": {
+      "get": {
+        "summary": "Busca um filme pelo ID",
+        "tags": ["Filmes"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" },
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Filme encontrado",
+            "content": {
+              "application/json": {
+                "example": {
+                  "id": 1,
+                  "titulo": "Interestelar",
+                  "diretor": "Christopher Nolan",
+                  "ano": 2014,
+                  "nota": 9.5
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Filme não encontrado",
+            "content": {
+              "application/json": {
+                "example": { "mensagem": "Filme não encontrado." }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Atualiza um filme existente",
+        "tags": ["Filmes"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" },
+            "example": 1
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {
+                "nota": 9.8
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Filme atualizado com sucesso" },
+          "404": { "description": "Filme não encontrado" }
+        }
+      },
+      "delete": {
+        "summary": "Remove um filme",
+        "tags": ["Filmes"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" },
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Filme removido com sucesso",
+            "content": {
+              "application/json": {
+                "example": { "mensagem": "Filme removido com sucesso." }
+              }
+            }
+          },
+          "404": { "description": "Filme não encontrado" }
+        }
+      }
+    }
+  }
+}
