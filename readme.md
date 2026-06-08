@@ -53,7 +53,7 @@ http://localhost:3000/docs
 ---
 
 ## Exemplos
-Para fazer os testes, vá em Try it out e edite a linha de código, ou digite o que é requerido (Exemplo do ID)
+
 ### Listar todos
 ```
 GET http://localhost:3000/filmes

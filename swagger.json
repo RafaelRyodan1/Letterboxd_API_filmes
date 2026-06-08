@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "API de Filmes - Letterboxd database Be Like.",
-    "description": "API REST para cadastro e consulta de filmes em geral.",
+    "title": "API de Filmes",
+    "description": "API REST para cadastro e consulta de filmes.",
     "version": "1.0.0"
   },
   "servers": [
